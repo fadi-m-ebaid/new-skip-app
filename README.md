@@ -29,7 +29,7 @@ When building this application, I focused on creating an intuitive user experien
 
 ## Design Features
 
-- **Color Palette**: Uses Alison + Geoff's color palette
+- **Color Palette**: Uses Alison + Geoff's color palette that reflects sustainability
   - Card Background: #F5F1E8 (warm cream)
   - Price Text: #D2845A (orange)
   - Select Buttons: #8FA68E (green)
