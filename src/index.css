@@ -1,0 +1,322 @@
+/* Custom styles using updated color scheme */
+
+:root {
+  --primary-blue: #7A9BB8;
+  --card-background: #f0ede7;
+  --text-dark: #2D3748;
+  --price-green: #647563;
+  --select-orange: #d87e4d;
+  --background-light: #F8F9FA;
+  --modal-overlay: rgba(122, 155, 184, 0.9);
+}
+
+body {
+   overflow-x: hidden;
+  background-color: var(--background-light);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  color: var(--text-dark);
+}
+
+.skip-card {
+  background-color: var(--card-background);
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  height: 320px;
+  cursor: pointer;
+}
+
+.skip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.skip-card.selected {
+  border: 2px solid var(--price-green);
+  box-shadow: 0 0 20px rgba(143, 166, 142, 0.3);
+}
+
+.skip-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  padding: 5px;
+  margin: 5px !important;
+  /* border-bottom: 1px solid #7A9BB8; */
+}
+
+.skip-size-overlay {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(45, 55, 72, 0.85);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  z-index: 2;
+}
+
+.skip-price {
+  color: var(--price-green);
+  font-weight: 600;
+  font-size: 20px;
+  margin: 15px 0, 5px;
+  text-align: center;
+  background: linear-gradient(to left, 
+    rgba(211, 221, 237, 0) 0%, 
+    rgba(211, 221, 237, 0.5) 50%, 
+    rgba(211, 221, 237, 0) 100%
+);
+}
+
+.select-btn {
+  background-color: var(--select-orange);
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.select-btn:hover {
+  background-color: #c2754a;
+  transform: scale(1.05);
+}
+
+.select-btn.selected {
+  background-color: var(--price-green);
+  color: white;
+}
+
+.select-btn.selected:hover {
+  background-color: #7a8a7e;
+}
+
+.progress-container {
+  margin-bottom: 40px;
+}
+
+.progress-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  color: var(--text-dark);
+  font-weight: 600;
+  margin: 0 auto;
+  position: relative;
+}
+
+.progress-step.active {
+  background-color: var(--select-orange);
+  color: white;
+}
+
+.progress-step.completed {
+  background-color: var(--price-green);
+  color: white;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--modal-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content-custom {
+  background: var(--card-background);
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideIn 0.3s ease;
+}
+
+.modal-skip-image {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  object-fit: contain;
+  margin: 20px auto;
+  display: block;
+  position: relative;
+}
+
+.dimension-overlay {
+  position: absolute;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.status-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.price-breakdown {
+  border-top: 2px solid #e0e0e0;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.total-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.modal-select-btn {
+  background-color: var(--select-orange);
+  border: none;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.modal-select-btn:hover {
+  background-color: #c2754a;
+  transform: translateY(-2px);
+}
+
+.modal-select-btn.selected {
+  background-color: var(--price-green);
+  color: white;
+}
+
+.modal-select-btn.selected:hover {
+  background-color: #7a8a7e;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-dark);
+  cursor: pointer;
+  padding: 5px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skip-card {
+    height: 280px;
+  }
+  
+  .skip-image {
+    height: 160px;
+    padding: 15px;
+  }
+  
+  .skip-size-overlay {
+    top: 20px;
+    left: 20px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  
+  .skip-price {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .select-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+    bottom: 15px;
+    right: 15px;
+    min-width: 70px;
+  }
+  
+  .modal-content-custom {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .skip-card {
+    height: 260px;
+  }
+  
+  .skip-image {
+    height: 140px;
+    padding: 10px;
+  }
+  
+  .skip-size-overlay {
+    top: 15px;
+    left: 15px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .skip-price {
+    font-size: 16px;
+  }
+  
+  .select-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+    bottom: 12px;
+    right: 12px;
+    min-width: 60px;
+  }
+}
+
