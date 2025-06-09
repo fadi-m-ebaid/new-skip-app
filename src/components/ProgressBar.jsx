@@ -34,7 +34,7 @@ const ProgressBar = ({ currentStep = 1 }) => {
               <div 
                 className="position-absolute top-50 start-100 translate-middle-y"
                 style={{
-                  width: '60px',
+                  // width: '60px',
                   height: '2px',
                   backgroundColor: step.number < currentStep ? 'var(--select-green)' : '#e9ecef',
                   zIndex: -1
